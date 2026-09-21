@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<script>
+  (function () {
+    try {
+      var lang = localStorage.getItem("tyt-lang") || "en";
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    } catch (e) {}
+  })();
+</script>
+<title>TYT – Take Your Time | Menu</title>
+<meta name="description" content="TYT – Take Your Time. The full digital menu — every drink and dish, straight from the counter." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TYT – Take Your Time | Menu" />
+<meta property="og:description" content="The full TYT menu — every drink and dish, straight from the counter." />
+<meta property="og:image" content="images/logo.png" />
+
+<link rel="icon" href="images/favicon.png" />
+<link rel="preload" as="image" href="images/logo.png" fetchpriority="high" />
+<link rel="preload" as="image" href="images/logo-drinking.png" />
+<link rel="preload" as="image" href="images/menu/single-espresso.webp" fetchpriority="high" />
+<link rel="preload" as="image" href="images/menu/double-espresso.webp" fetchpriority="high" />
+<link rel="preload" as="image" href="images/menu/american-coffee.webp" />
+<link rel="stylesheet" href="css/style.css?v=20260921f" />
+<noscript><style>
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .menu-category .menu-item { animation: none !important; opacity: 1 !important; }
+  .scroll-progress { display: none !important; }
+</style></noscript>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============================= NAVBAR ============================= -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="#top" class="brand">
+      <span class="brand-mark"><img src="images/logo-icon.png" alt="TYT – Take Your Time logo" /></span>
+      <span class="brand-word">TYT<small>Take Your Time</small></span>
+    </a>
+
+    <div class="nav-cta">
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Language switch">
+        <button type="button" class="lang-switch-btn" data-lang="ar"><span class="flag">🇪🇬</span><span>عربي</span></button>
+        <button type="button" class="lang-switch-btn" data-lang="en"><span class="flag">🇬🇧</span><span>EN</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============================= HERO ============================= -->
+<section class="hero" id="home">
+  <div class="hero-grain"></div>
+  <div class="hero-decor" id="heroDecor">
+    <div class="hero-ring r1"></div>
+    <div class="hero-ring r2"></div>
+    <img class="hero-bean b1" src="images/bean.svg" alt="" aria-hidden="true" />
+    <img class="hero-bean b2" src="images/bean.svg" alt="" aria-hidden="true" />
+    <img class="hero-bean b3" src="images/bean.svg" alt="" aria-hidden="true" />
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-logo-wrap" id="heroLogoWrap">
+      <img class="hero-logo" src="images/logo.png" fetchpriority="high" decoding="async" alt="TYT – Take Your Time logo" />
+      <img class="hero-logo-drinking" src="images/logo-drinking.png" decoding="async" alt="" aria-hidden="true" />
+    </div>
+
+    <span class="hero-eyebrow"><span class="dot">tyt</span> <span data-i18n="hero.eyebrow">Coffee &amp; Lounge · 10th of Ramadan</span></span>
+
+    <h1 class="hero-word">TYT</h1>
+    <p class="hero-sub">Take Your Time</p>
+
+    <p class="hero-tagline"><span data-i18n="hero.tagline1">Unique Coffee</span> <span class="sep">·</span> <span data-i18n="hero.tagline2">Unmatched Vibes</span></p>
+    <p class="hero-sip" data-i18n="hero.sip">Take Your Time — Sip, Chill, Repeat.</p>
+
+    <div class="hero-actions">
+      <a href="#menu" class="btn btn-primary" data-i18n="nav.viewMenu">View Menu</a>
+      <a href="#offers" class="btn btn-ghost-dark" data-i18n="nav.offers">Offers</a>
+      <a href="#comments" class="btn btn-ghost-dark" data-i18n="nav.comments">Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= MENU ============================= -->
+<section class="menu-section" id="menu">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow" data-i18n="menu.eyebrow">The Full Menu</span>
+      <h2 class="section-title" data-i18n-html="menu.title">Everything on tap,<br /><em>straight from the counter.</em></h2>
+      <p class="section-lede" data-reveal="delay-1" data-i18n="menu.lede">Every item, description, and price below is taken directly from our printed menu — search or browse by category to find what calls to you.</p>
+    </div>
+
+    <div class="menu-toolbar">
+      <label class="menu-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="menuSearch" placeholder="Search the menu…" aria-label="Search the menu" data-i18n-placeholder="menu.searchPlaceholder" data-i18n-aria-label="menu.searchAria" />
+        <button type="button" class="menu-search-clear" id="menuSearchClear" aria-label="Clear search" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </label>
+    </div>
+
+    <div class="menu-tabs-wrap">
+      <div class="menu-tabs" id="menuTabs" role="tablist" aria-label="Menu categories"></div>
+    </div>
+
+    <div class="menu-pager" id="menuPager">
+      <div class="menu-pager-stage" id="menuStage">
+        <button type="button" class="menu-pager-arrow menu-pager-arrow--left" id="menuArrowLeft" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <div id="menuContainer"></div>
+        <button type="button" class="menu-pager-arrow menu-pager-arrow--right" id="menuArrowRight" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <p class="menu-empty" id="menuEmpty" data-i18n="menu.empty">No drinks or bites match your search — try a different word.</p>
+
+  </div>
+</section>
+
+<!-- ============================= OFFERS ============================= -->
+<section class="offers-section" id="offers">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow" data-i18n="offers.eyebrow">Offers</span>
+      <h2 class="section-title" data-i18n-html="offers.title">Deals worth<br /><em>slowing down for.</em></h2>
+      <p class="section-lede" data-reveal="delay-1" data-i18n="offers.lede">Grab one of our current specials, or check back — new drops land here often.</p>
+    </div>
+
+    <div class="offers-grid" id="offersGrid"></div>
+    <p class="offers-note" id="offersNote"></p>
+  </div>
+</section>
+
+<!-- ============================= REVIEWS ============================= -->
+<section class="comments-section" id="comments">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow" data-i18n="comments.eyebrow">Reviews</span>
+      <h2 class="section-title" data-i18n-html="comments.title">Tell us<br /><em>what you think.</em></h2>
+      <p class="section-lede" data-reveal="delay-1" data-i18n="comments.lede">Leave a review and a rating about TYT — your visit, your favorite drink, anything at all.</p>
+    </div>
+
+    <div class="rating-summary" id="ratingSummary" hidden>
+      <span class="rating-summary-score" id="ratingSummaryScore">0.0</span>
+      <div class="rating-summary-details">
+        <span class="star-rating" id="ratingSummaryStars"></span>
+        <span class="rating-summary-count" id="ratingSummaryCount"></span>
+      </div>
+    </div>
+
+    <form class="comment-form" id="commentForm" data-reveal="delay-1">
+      <div class="rating-picker">
+        <span class="rating-picker-label" data-i18n="comments.ratingLabel">Your rating</span>
+        <div class="rating-picker-stars" id="ratingPicker" role="radiogroup" aria-label="Rating">
+          <span class="rating-picker-star" data-value="1" role="radio" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><path d="M12 2.5 15.09 8.76 22 9.77 17 14.64 18.18 21.52 12 18.27 5.82 21.52 7 14.64 2 9.77 8.91 8.76 12 2.5Z"/></svg></span>
+          <span class="rating-picker-star" data-value="2" role="radio" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M12 2.5 15.09 8.76 22 9.77 17 14.64 18.18 21.52 12 18.27 5.82 21.52 7 14.64 2 9.77 8.91 8.76 12 2.5Z"/></svg></span>
+          <span class="rating-picker-star" data-value="3" role="radio" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M12 2.5 15.09 8.76 22 9.77 17 14.64 18.18 21.52 12 18.27 5.82 21.52 7 14.64 2 9.77 8.91 8.76 12 2.5Z"/></svg></span>
+          <span class="rating-picker-star" data-value="4" role="radio" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M12 2.5 15.09 8.76 22 9.77 17 14.64 18.18 21.52 12 18.27 5.82 21.52 7 14.64 2 9.77 8.91 8.76 12 2.5Z"/></svg></span>
+          <span class="rating-picker-star" data-value="5" role="radio" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M12 2.5 15.09 8.76 22 9.77 17 14.64 18.18 21.52 12 18.27 5.82 21.52 7 14.64 2 9.77 8.91 8.76 12 2.5Z"/></svg></span>
+        </div>
+        <input type="hidden" id="commentRating" value="0" />
+      </div>
+      <input type="text" id="commentName" class="comment-input" maxlength="40" required
+        placeholder="Your name" data-i18n-placeholder="comments.namePlaceholder" aria-label="Your name" />
+      <textarea id="commentMessage" class="comment-textarea" maxlength="500" rows="3" required
+        placeholder="Write your review…" data-i18n-placeholder="comments.messagePlaceholder" aria-label="Your review"></textarea>
+      <div class="comment-form-foot">
+        <p class="comment-status" id="commentStatus" role="status"></p>
+        <button type="submit" class="btn btn-primary" id="commentSubmitBtn" data-i18n="comments.submit">Post Review</button>
+      </div>
+    </form>
+
+    <div class="comments-list" id="commentsList"></div>
+    <p class="comments-empty" id="commentsEmpty" data-i18n="comments.empty">No reviews yet — be the first to say hi!</p>
+  </div>
+</section>
+
+<!-- ============================= MENU ITEM QUICK VIEW ============================= -->
+<div class="item-modal-overlay" id="itemModalOverlay">
+  <div class="item-modal" role="dialog" aria-modal="true" aria-labelledby="itemModalName">
+    <button class="item-modal-close" id="itemModalClose" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="item-modal-icon" id="itemModalIcon"></div>
+    <span class="item-modal-category" id="itemModalCategory"></span>
+    <h3 class="item-modal-name" id="itemModalName"></h3>
+    <p class="item-modal-desc" id="itemModalDesc"></p>
+    <div class="item-modal-foot">
+      <div class="item-modal-price-row">
+        <span class="item-modal-price" id="itemModalPrice"></span>
+        <button type="button" class="menu-item-fav item-modal-fav" id="itemModalFav" aria-pressed="false" hidden></button>
+      </div>
+      <span class="item-modal-note" id="itemModalNote" data-i18n="modal.note">Prices &amp; availability as listed on our printed menu.</span>
+    </div>
+  </div>
+</div>
+
+<script src="js/menu-data.js?v=20260921d"></script>
+<script src="js/offers-data.js?v=20260921d"></script>
+<script src="js/i18n.js?v=20260921d"></script>
+<script src="js/menu-app.js?v=20260921d"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="js/comments.js?v=20260921d"></script>
+<script src="js/page-nav.js?v=20260921d"></script>
+</body>
+</html>
